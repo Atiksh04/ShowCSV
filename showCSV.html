@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+ 		<title>Freelance Work</title>
+        <script src="http://d3js.org/d3.v3.min.js"></script> 
+        <script type="text/javascript"charset="utf-8">
+            d3.text("sampleCSV.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+                var container = document.getElementById('show')
+					parsedCSV.map(function(data){
+						if(parsedCSV[0] !== data) {
+							let index=0
+							data.map(function(value){
+								var node = document.createElement("DIV");
+								var textnode = document.createTextNode(parsedCSV[0][index]+" : "+value);
+								index ++    
+								node.appendChild(textnode);  
+								container.appendChild(node)
+							})
+						}
+					}) 
+			});
+        </script>
+   </head>
+    <body>
+    	<div id="show">
+    	</div>
+    </body>
+</html>
