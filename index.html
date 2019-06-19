@@ -17,7 +17,7 @@
 							container.appendChild(wrapDiv)
 							data.map(function(value){
 								var node = document.createElement("DIV");
-								var textnode = document.createTextNode(parsedCSV[0][index]+" : "+value);
+								var textnode = document.createTextNode(value);
 								index ++    
 								node.appendChild(textnode);  
 								wrapDiv.appendChild(node)
