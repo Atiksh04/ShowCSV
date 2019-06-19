@@ -10,13 +10,17 @@
                 var container = document.getElementById('show')
 					parsedCSV.map(function(data){
 						if(parsedCSV[0] !== data) {
-							let index=0
+							let index=0,counter =1
+							var wrapDiv = document.createElement("DIV")
+							console.log('index', parsedCSV.indexOf(data))
+							wrapDiv.id= parsedCSV.indexOf(data)
+							container.appendChild(wrapDiv)
 							data.map(function(value){
 								var node = document.createElement("DIV");
 								var textnode = document.createTextNode(parsedCSV[0][index]+" : "+value);
 								index ++    
 								node.appendChild(textnode);  
-								container.appendChild(node)
+								wrapDiv.appendChild(node)
 							})
 						}
 					}) 
